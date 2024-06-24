@@ -19,7 +19,9 @@
     "grayGlacierBlock": 15050000,
     "terminalTotalDifficulty": 58750000000000000000000,
     "shanghaiTime": 1681338455,
-    "ethash": {}
+    "cancunTime": 1710338135,
+    "ethash": {},
+    "depositContractAddress": "0x00000000219ab540356cBB839Cbe05303d7705Fa"
   },
   "nonce": "0x42",
   "timestamp": "0x0",
