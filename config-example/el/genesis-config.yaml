@@ -32,3 +32,4 @@ genesis_gaslimit: ${GENESIS_GASLIMIT}
 slot_duration_in_seconds: ${SLOT_DURATION_IN_SECONDS}
 electra_fork_epoch: ${ELECTRA_FORK_EPOCH}
 eof_activation_epoch: ${EOF_ACTIVATION_EPOCH}
+slots_per_epoch: ${SLOTS_PER_EPOCH}
