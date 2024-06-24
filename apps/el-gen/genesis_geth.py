@@ -185,12 +185,12 @@ if 'electra_fork_epoch' in data:
     out['config']['pragueTime'] = \
         int(data['genesis_timestamp']) + \
         int(data['genesis_delay']) + \
-        int(data['electra_fork_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds']) * int(data['slots_per_epoch'])
+        int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
 
 if data['eof_activation_epoch'] != None:
     out['config']['pragueEOFTime'] =  \
         int(data['genesis_timestamp']) + \
         int(data['genesis_delay']) + \
-        int(data['eof_activation_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds']) * int(data['slots_per_epoch'])
+        int(data['eof_activation_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
 
 print(json.dumps(out, indent='  '))
