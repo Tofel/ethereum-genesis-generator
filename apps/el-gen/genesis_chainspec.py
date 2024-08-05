@@ -227,12 +227,13 @@ if data['electra_fork_epoch'] != None:
     out['params']['eip2537TransitionTimestamp']= hex(
         int(data['genesis_timestamp']) +
         int(data['genesis_delay']) +
-        int(data['electra_fork_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds'])
+        int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
     )
+
     out['params']['eip2935TransitionTimestamp']= hex(
         int(data['genesis_timestamp']) +
         int(data['genesis_delay']) +
-        int(data['electra_fork_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds'])
+        int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
     )
 
     out['params']['eip6110TransitionTimestamp']= hex(
@@ -240,29 +241,24 @@ if data['electra_fork_epoch'] != None:
         int(data['genesis_delay']) +
         int(data['electra_fork_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds'])
     )
+
     out['params']['eip7002TransitionTimestamp']= hex(
         int(data['genesis_timestamp']) +
         int(data['genesis_delay']) +
-        int(data['electra_fork_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds'])
+        int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
     )
 
     out['params']['eip7251TransitionTimestamp']= hex(
         int(data['genesis_timestamp']) +
         int(data['genesis_delay']) +
-        int(data['electra_fork_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds'])
-    )
-
-    out['params']['eip7702TransitionTimestamp']= hex(
-        int(data['genesis_timestamp']) +
-        int(data['genesis_delay']) +
-        int(data['electra_fork_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds'])
+        int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
     )
 
 if data['eof_activation_epoch'] != None:
     out['params']['eip7692TransitionTimestamp'] = hex(
         int(data['genesis_timestamp']) + \
         int(data['genesis_delay']) + \
-        int(data['eof_activation_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds'])
+        int(data['eof_activation_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
     )
 
 print(json.dumps(out, indent='  '))

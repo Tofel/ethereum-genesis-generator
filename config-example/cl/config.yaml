@@ -57,6 +57,8 @@ SHARD_COMMITTEE_PERIOD: $SHARD_COMMITTEE_PERIOD
 # 2**11 (= 2,048) Eth1 blocks ~8 hours
 ETH1_FOLLOW_DISTANCE: $ETH1_FOLLOW_DISTANCE
 
+SLOTS_PER_EPOCH: $SLOTS_PER_EPOCH
+
 # Validator cycle
 # ---------------------------------------------------------------
 # 2**2 (= 4)
