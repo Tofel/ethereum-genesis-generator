@@ -223,28 +223,32 @@ else:
     for addr, account in data['additional_preloaded_contracts'].items():
         add_alloc_entry(addr, account)
 
-if 'electra_fork_epoch' in data:
+if data['electra_fork_epoch'] != None:
     out['params']['eip2537TransitionTimestamp']= hex(
         int(data['genesis_timestamp']) +
         int(data['genesis_delay']) +
         int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
     )
+
     out['params']['eip2935TransitionTimestamp']= hex(
         int(data['genesis_timestamp']) +
         int(data['genesis_delay']) +
         int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
     )
-    out['params']['eip3074TransitionTimestamp']= hex(
-        int(data['genesis_timestamp']) +
-        int(data['genesis_delay']) +
-        int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
-    )
+
     out['params']['eip6110TransitionTimestamp']= hex(
         int(data['genesis_timestamp']) +
         int(data['genesis_delay']) +
+        int(data['electra_fork_epoch']) * ( 32 if data['preset_base']=='mainnet' else 8 ) * int(data['slot_duration_in_seconds'])
+    )
+
+    out['params']['eip7002TransitionTimestamp']= hex(
+        int(data['genesis_timestamp']) +
+        int(data['genesis_delay']) +
         int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
     )
-    out['params']['eip7002TransitionTimestamp']= hex(
+
+    out['params']['eip7251TransitionTimestamp']= hex(
         int(data['genesis_timestamp']) +
         int(data['genesis_delay']) +
         int(data['electra_fork_epoch']) * int(data['slots_per_epoch']) * int(data['slot_duration_in_seconds'])
